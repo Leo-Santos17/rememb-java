@@ -1,50 +1,34 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args)
     {
-        // Primitives
-        int age = 21;
-        int year = 2025;
-        int quantity = 1;
+        Scanner scanner = new Scanner(System.in);
 
-        double price = 19.99;
-        double gpa = 3.5;
-        double temperature = -12.5;
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
 
-        char grade = 'A';
-        char symbol = '!';
-        char currency = '$';
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
 
-        boolean isStudent = false;
-        boolean forSale = false;
-        boolean isOnline = true;
+        System.out.print("Enter your GPA: ");
+        double gpa = scanner.nextDouble();
 
-        // References
-        String name = "Bro Code";
-        String food = "pizza";
-        String email = "fake123@gmail.com";
-        String car = "Mustang";
-        String color = "red";
+        System.out.print("Are you Student? (true/false): ");
+        boolean isStudent = scanner.nextBoolean();
 
-        // Stdout
-        System.out.println("Your choice is a " + color + " " + " " + year + " " + car);
-        System.out.println("The price is: " + currency + price);
 
-        // Conditions
+        System.out.println("Hello "+name);
+        System.out.println("You're "+age+" years old");
+        System.out.println("Your gpa is: "+gpa);
         if(isStudent)
         {
-            System.out.println("You are Student");
+            System.out.println("You are enrolled as a student");
         }
         else
         {
-            System.out.println("You're not student");
+            System.out.println("You're NOT enrolled");
         }
-        if(forSale)
-        {
-            System.out.println("There is a "+car+" for sale");
-        }
-        else
-        {
-            System.out.println("There is a "+car+" is not for sale");
-        }
+        scanner.close();
     }
 }
