@@ -3,32 +3,30 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)
     {
+        // Mad Libs Game
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter your name: ");
-        String name = scanner.nextLine();
+        String adjective1;
+        String noun1;
+        String adjective2;
+        String verb1;
+        String adjective3;
 
-        System.out.print("Enter your age: ");
-        int age = scanner.nextInt();
+        System.out.print("Enter an adjective (description): ");
+        adjective1 = scanner.nextLine();
+        System.out.print("Enter an noun (animal or person): ");
+        noun1 = scanner.nextLine();
+        System.out.print("Enter an adjective (description): ");
+        adjective2 = scanner.nextLine();
+        System.out.print("Enter an verb end with -ing (action): ");
+        verb1 = scanner.nextLine();
+        System.out.print("Enter an adjective (description): ");
+        adjective3 = scanner.nextLine();
 
-        System.out.print("Enter your GPA: ");
-        double gpa = scanner.nextDouble();
+        System.out.print("Today I went to a "+adjective1+" zoo. ");
+        System.out.print("In an exhibit, I saw a "+noun1+". ");
+        System.out.println(noun1+" was " +adjective2+" and "+verb1+"!");
+        System.out.print("I was "+ adjective3+"!");
 
-        System.out.print("Are you Student? (true/false): ");
-        boolean isStudent = scanner.nextBoolean();
-
-
-        System.out.println("Hello "+name);
-        System.out.println("You're "+age+" years old");
-        System.out.println("Your gpa is: "+gpa);
-        if(isStudent)
-        {
-            System.out.println("You are enrolled as a student");
-        }
-        else
-        {
-            System.out.println("You're NOT enrolled");
-        }
-        scanner.close();
     }
 }
