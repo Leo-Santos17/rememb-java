@@ -1,67 +1,35 @@
-import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args)
     {
 
-        //  if statement = performs a block of code if its condition is true
+        Random random = new Random();
 
-        Scanner scanner = new Scanner(System.in);
+        int number, number2, number3;
+        double number_d,number_d2,number_d3;
+        boolean isHeads;
 
-        String name;
-        int age;
-        boolean isStudent;
+        // Integer
+        number = random.nextInt();
+        number2 = random.nextInt(1,5);
+        number3 = random.nextInt(6,10);
+        // Double
+        number_d = random.nextDouble();
+        number_d2 = random.nextDouble(1,2);
+        number_d3 = random.nextDouble(2,3);
+        // Boolean
+        isHeads = random.nextBoolean();
 
-        System.out.print("Enter your name: ");
-        name = scanner.nextLine();
-
-        System.out.print("Enter your age: ");
-        age = scanner.nextInt();
-
-        System.out.print("are you student? (true/false): ");
-        isStudent = scanner.nextBoolean();
-
-        // Group 1
-        if(name.isEmpty())
+        if(isHeads)
         {
-            System.out.println("You didn't enter your name!");
+            System.out.println("HEADS");
         }
         else
         {
-            System.out.println("Hello "+name+"!");
+            System.out.println("TAILS");
         }
 
-        // Group 2
-        if(age>=65)
-        {
-            System.out.println("You're a senior!");
-        }
-        else if(age>=18)
-        {
-            System.out.println("You're an adult!");
-        }
-        else if(age<0)
-        {
-            System.out.println("You haven't been born yet!");
-        }
-        else if(age == 0)
-        {
-            System.out.println("You're a baby!");
-        }
-        else
-        {
-            System.out.println("You're a child!");
-        }
-
-        // Group 3
-        if(isStudent)
-        {
-            System.out.println("You're a student!");
-        }
-        else
-        {
-            System.out.println("You're not student");
-        }
 
     }
 }
