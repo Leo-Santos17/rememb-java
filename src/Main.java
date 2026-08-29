@@ -3,30 +3,30 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)
     {
-        // Mad Libs Game
-        Scanner scanner = new Scanner(System.in);
+        // Arithmetic Operators
+        int x = 10;
+        int y = 2;
+        int z;
 
-        String adjective1;
-        String noun1;
-        String adjective2;
-        String verb1;
-        String adjective3;
+        // Sum
+        // z = x+y;
+        // Minos
+        // z = x-y;
+        // Multiplier
+        // z = x*y;
+        // Divisor
+        // z = x/y;
+        // Remainder
+        // z = x%y;
 
-        System.out.print("Enter an adjective (description): ");
-        adjective1 = scanner.nextLine();
-        System.out.print("Enter an noun (animal or person): ");
-        noun1 = scanner.nextLine();
-        System.out.print("Enter an adjective (description): ");
-        adjective2 = scanner.nextLine();
-        System.out.print("Enter an verb end with -ing (action): ");
-        verb1 = scanner.nextLine();
-        System.out.print("Enter an adjective (description): ");
-        adjective3 = scanner.nextLine();
+        // Augmented Assignment Operators
+        x -= y; // equal x = x - y
+        x += y; // equal x = x + y
+        x *= y; // equal x = x * y
 
-        System.out.print("Today I went to a "+adjective1+" zoo. ");
-        System.out.print("In an exhibit, I saw a "+noun1+". ");
-        System.out.println(noun1+" was " +adjective2+" and "+verb1+"!");
-        System.out.print("I was "+ adjective3+"!");
+        // Increment and decrement Operators
+        x++; // Equals x = x + 1
+        x--; // Equals x = x - 1
 
     }
 }
