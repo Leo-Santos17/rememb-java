@@ -1,27 +1,29 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args)
     {
+        // Enchanced switch = A replacement to many else if statements
+        //      (java14 feature)
 
         Scanner scanner = new Scanner(System.in);
 
-        double temp;
-        double newTemp;
-        String unit;
+        System.out.print("Enter the day of the week: ");
+        String day = scanner.nextLine();
 
-        System.out.print("Enter the temperature: ");
-        temp = scanner.nextDouble();
+        switch(day)
+        {
+//            case "Monday" -> System.out.println("It is a weekday");
+//            case "Tuesday" -> System.out.println("It is a weekday");
+//            case "Wednesday" -> System.out.println("It is a weekday");
+//            case "Thursday" -> System.out.println("It is a weekday");
+//            case "Friday" -> System.out.println("It is a weekday");
+//            case "Saturday" -> System.out.println("It is the weekend");
+//            case "Sunday" -> System.out.println("It is the weekend");
+            case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> System.out.println("It's a weekday");
+            case "Saturday", "Sunday" -> System.out.println("It is the weekend");
+            default -> System.out.println(day + " is not a day");
+        }
 
-        System.out.print("Convert to Celsius or Fahrenheit? (C or F): ");
-        unit = scanner.next().toUpperCase();
-
-        // (condition) ? true : false
-        newTemp = (unit.equals("C")) ? (temp - 32) * 5 / 9 : (temp*9/5)+32;
-
-        System.out.printf("%.1fº%s",newTemp, unit);
-
-        scanner.close();
     }
 }
