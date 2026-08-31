@@ -1,40 +1,37 @@
 public class Main {
     public static void main(String[] args)
     {
-        // Nested IFs
+        // String Methods
+        String name = "  Bro Code    ";
 
-        boolean isStudent = false;
-        boolean isSenior = true;
-        double price = 9.99;
+        int length = name.length();
+        char letter = name.charAt(2);
+        int index = name.indexOf("o");
+        int lastIndex = name.lastIndexOf("o");
 
-        if (isStudent)
+//        name = name.toUpperCase();
+//        name = name.toLowerCase();
+//        name = name.trim();
+//        name = name.replace("o", "a");
+//        System.out.println(name.isEmpty());
+        // Contains
+        if(name.contains(" "))
         {
-            if(isSenior)
-            {
-                System.out.println("You get a senior discount of 20%");
-                System.out.println("You get a student discount of 10%");
-                price *= 0.7;
-            }
-            else
-            {
-                System.out.println("You get a student discount of 10%");
-                price *= 0.9;
-            }
+            System.out.println("Your name contains a space");
         }
         else
         {
-            if(isSenior)
-            {
-                System.out.println("You get a senior discount of 20%");
-                price *= 0.8;
-            }
-            else
-            {
-                price *= 1;
-            }
+            System.out.println("Your name DOESN'T contain any spaces");
         }
 
-        System.out.printf("The price of a ticket is $%,.2f",price);
-
+        // Equals
+        if(name.equals("password")) // equalsIgnoreCase
+        {
+            System.out.println("Your name can't be a password");
+        }
+        else
+        {
+            System.out.printf("Hello %s", name);
+        }
     }
 }
