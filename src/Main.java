@@ -3,27 +3,54 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)
     {
-        // Enchanced switch = A replacement to many else if statements
-        //      (java14 feature)
+        // Calculator
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter the day of the week: ");
-        String day = scanner.nextLine();
+        double num1;
+        double num2;
+        char operator;
+        double result = 0;
+        boolean validOperation = true;
 
-        switch(day)
+        System.out.print("Enter the first number: ");
+        num1 = scanner.nextDouble();
+
+        System.out.print("Enter an operator (+, -. *, /, ^): ");
+        operator = scanner.next().charAt(0);
+
+        System.out.print("Enter the second number: ");
+        num2 = scanner.nextDouble();
+
+        switch(operator)
         {
-//            case "Monday" -> System.out.println("It is a weekday");
-//            case "Tuesday" -> System.out.println("It is a weekday");
-//            case "Wednesday" -> System.out.println("It is a weekday");
-//            case "Thursday" -> System.out.println("It is a weekday");
-//            case "Friday" -> System.out.println("It is a weekday");
-//            case "Saturday" -> System.out.println("It is the weekend");
-//            case "Sunday" -> System.out.println("It is the weekend");
-            case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> System.out.println("It's a weekday");
-            case "Saturday", "Sunday" -> System.out.println("It is the weekend");
-            default -> System.out.println(day + " is not a day");
+            case '+' -> result = num1+num2;
+            case '-' -> result = num1-num2;
+            case '*' -> result = num1*num2;
+            case '/' -> {
+                if(num2 == 0)
+                {
+                    System.out.println("Cannot divide by zero!");
+                    validOperation = false;
+                }
+                else
+                {
+                    result = num1/num2;
+                }
+            }
+            case '^' -> result = Math.pow(num1, num2);
+            default ->
+            {
+                System.out.println("Invalid Operator");
+                validOperation = false;
+            }
         }
 
+        if(validOperation)
+        {
+            System.out.println(result);
+        }
+
+        scanner.close();
     }
 }
