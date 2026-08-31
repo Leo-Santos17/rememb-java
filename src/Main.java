@@ -1,42 +1,15 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args)
     {
-        // Weight Conversion Program
+        // ternary operator ? = Return 1 of 2 values if a condition is true
 
-        Scanner scanner = new Scanner(System.in);
+        // variable = (condition) ? ifTrue : ifFalse;
 
-        double weight;
-        double newWeight;
-        int choice;
+//        int score = 55;
+//        String passOrFail = (score>=60) ? "PASS" : "FAIL";
 
-        System.out.println("Weight Conversion program");
-        System.out.println("1: Convert lbs to kgs");
-        System.out.println("2: Convert kgs to lbs");
+//        int number = 2;
+//        String evenOrOdd = (number % 2 == 0)?"EVEN":"ODD";
 
-        System.out.print("Choose an option: ");
-        choice = scanner.nextInt();
-
-        if(choice == 1)
-        {
-            System.out.print("Enter the weight in lbs: ");
-            weight = scanner.nextDouble();
-            newWeight = weight * 0.453592;
-            System.out.printf("The new weight in kgs is: %.2f",newWeight);
-        }
-        else if (choice == 2)
-        {
-            System.out.print("Enter the weight in kgs: ");
-            weight = scanner.nextDouble();
-            newWeight = weight * 2.20462;
-            System.out.printf("The new weight in lbs is: %.2f",newWeight);
-        }
-        else
-        {
-            System.out.println("That was not a valid choice");
-        }
-
-        scanner.close();
     }
 }
