@@ -1,15 +1,27 @@
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args)
     {
-        // ternary operator ? = Return 1 of 2 values if a condition is true
 
-        // variable = (condition) ? ifTrue : ifFalse;
+        Scanner scanner = new Scanner(System.in);
 
-//        int score = 55;
-//        String passOrFail = (score>=60) ? "PASS" : "FAIL";
+        double temp;
+        double newTemp;
+        String unit;
 
-//        int number = 2;
-//        String evenOrOdd = (number % 2 == 0)?"EVEN":"ODD";
+        System.out.print("Enter the temperature: ");
+        temp = scanner.nextDouble();
 
+        System.out.print("Convert to Celsius or Fahrenheit? (C or F): ");
+        unit = scanner.next().toUpperCase();
+
+        // (condition) ? true : false
+        newTemp = (unit.equals("C")) ? (temp - 32) * 5 / 9 : (temp*9/5)+32;
+
+        System.out.printf("%.1fº%s",newTemp, unit);
+
+        scanner.close();
     }
 }
