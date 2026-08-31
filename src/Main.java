@@ -1,63 +1,54 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args)
     {
-        Scanner scanner = new Scanner(System.in);
+        // printf() = is a method used to format output
 
-//        System.out.println(Math.PI);
-//        System.out.println(Math.E);
+        // %[flags][width][.precision][specifier-character]
 
-//        double result;
-//
-//        result = Math.pow(2,5);
-//        result = Math.abs(-5);
-//        result = Math.sqrt(9);
-//        result = Math.round(3.14);
-//        result = Math.ceil(3.14);
-//        result = Math.floor(3.99);
-//        result = Math.max(10,20);
-//        result = Math.min(10,20);
+        // [flags]
+        // + = output a plus
+        // , = comma grouping separator
+        // ( =  negative numbers are enclosed in ().
+        // space = display a minus if negative, space if positive
 
+        // [width]
+        // 0 = zero padding
+        // number = right justified padding
+        // negative number = left justified padding
 
-        // HYPOTENUSE c = Math.sqrt(a² + b²)
-//
-//        double a;
-//        double b;
-//        double c;
-//
-//        System.out.print("Enter the length of side A: ");
-//        a = scanner.nextDouble();
-//
-//        System.out.print("Enter the length of side B: ");
-//        b = scanner.nextDouble();
-//
-//        c = Math.sqrt(Math.pow(a, 2)+Math.pow(b,2));
-//
-//        System.out.println("The hypotenuse(side c) is: "+c+"cm");
+        String name = "Spongebob"; // s
+        char firstLetter = 'S'; // c
+        int age = 30; // d
+        double height = 60.5; // f
+        boolean isEmployed = true; // b
+        double price1 = 9.99;
+        double price2 = 11100.15;
+        double price3 = -54.01;
+        double price4 = 321;
+        int id1 = 1;
+        int id2 = 23;
+        int id3 = 456;
+        int id4 = 7890;
 
-        // Circumference = 2 * Math.PI * radius;
-        // area = Math.PI * Math.pow(radius, 2);
-        // volume =  (4.0/3.0) * Math.PI * Math.pow(radius, 3)
+        System.out.printf("Hello %s\n", name);
+        System.out.printf("Your name starts with a %c\n", firstLetter);
+        System.out.printf("You are %d years old\n", age);
+        System.out.printf("You are %f inches tall\n", height);
+        System.out.printf("Employed: %b\n", isEmployed);
 
-        double radius;
-        double circumference;
-        double area;
-        double volume;
+        System.out.printf("%s is %d years old\n",name, age);
 
-        System.out.print("Enter the radius: ");
-        radius = scanner.nextDouble();
+        // Flags
+        System.out.printf("% .1f\n", price1);
+        System.out.printf("%,.2f\n", price2);
+        System.out.printf("%+.3f\n", price3);
+        System.out.printf("%(.3f\n", price4);
 
-        circumference = 2 * Math.PI * radius;
-        area = Math.PI * Math.pow(radius, 2);
-        volume = (4.0/3.0) * Math.PI * Math.pow(radius,3);
+        // Width
+        System.out.printf("%40d\n", id1);
+        System.out.printf("%40d\n", id2);
+        System.out.printf("%40d\n", id3);
+        System.out.printf("%40d\n", id4);
 
-        System.out.printf("The circumference is: %.1fcm\n",circumference);
-        System.out.printf("The area is: %.1fcm²\n",area);
-        System.out.printf("The volume is: %.1fcm³\n",volume);
-
-        scanner.close();
-
-        // System.out.println(result);
     }
 }
