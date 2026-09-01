@@ -1,67 +1,42 @@
-import java.util.Locale;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args)
     {
+        // NUMBER GUESSING GAME
+
+        Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
-//        String name = "";
-//
-//        while(name.isEmpty())
-//        {
-//            System.out.print("Enter your name: ");
-//            name = scanner.nextLine();
-//        }
-//
-//        System.out.printf("Hello %s", name);
+        int guess;
+        int attempts = 0;
+        int min = 1;
+        int max = 100;
+        int randomNumber = random.nextInt(min,max);
 
-//        while (1==1)
-//        {
-//            System.out.println("HELP! I'M STUCK IN A LOOP");
-//        }
-
-//        String response = "";
-//
-//        while(!response.equals("Q"))
-//        {
-//            System.out.println("You are playing a game");
-//            System.out.print("Press Q to quit: ");
-//            response = scanner.next().toUpperCase();
-//        }
-//
-//        System.out.println("You have quit the game");
-
-
-//        int age = 0;
-//
-//        System.out.print("Enter your age: ");
-//        age = scanner.nextInt();
-//
-//        while(age < 0)
-//        {
-//            System.out.println("Your age can't be negative");
-//            System.out.print("Enter your age: ");
-//            age = scanner.nextInt();
-//        }
-
-//        do {
-//            System.out.println("Your age can't be negative");
-//            System.out.print("Enter your age: ");
-//            age = scanner.nextInt();
-//        } while(age < 0);
-
-//        System.out.printf("You are %d years old",age);
-
-
-        int number = 0;
-        while(number<1||number>10)
+        System.out.println("Number Guessing Game");
+        System.out.printf("Guess a number between %d-%d: ", min, max);
+        do
         {
-            System.out.print("Enter a number between 1 - 10: ");
-            number = scanner.nextInt();
-        }
+            System.out.print("Enter a guess: ");
+            guess = scanner.nextInt();
+            attempts++;
 
-        System.out.printf("You picked %d\n",number);
+            if(guess<randomNumber)
+            {
+                System.out.println("TOO LOW! Try again");
+            } else if (guess>randomNumber)
+            {
+                System.out.println("TOO HIGH! Try again");
+            }
+            else
+            {
+                System.out.printf("CORRECT! The number was %d\n",randomNumber);
+            }
+        } while(guess != randomNumber);
+
+        System.out.printf("# of attempts: %d",attempts);
 
         scanner.close();
     }
