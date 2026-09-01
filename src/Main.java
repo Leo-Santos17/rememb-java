@@ -1,42 +1,42 @@
 import java.util.Scanner;
-import java.util.Random;
 
 public class Main {
-    public static void main(String[] args)
-    {
-        // NUMBER GUESSING GAME
-
-        Random random = new Random();
+    public static void main(String[] args) throws InterruptedException {
+       // for loop = execute some code a CERTAIN amount of times
         Scanner scanner = new Scanner(System.in);
 
-        int guess;
-        int attempts = 0;
-        int min = 1;
-        int max = 100;
-        int randomNumber = random.nextInt(min,max);
+//        for(int i = 0; i < 10; i++)
+//        {
+//            System.out.println(i);
+//        }
+//
+//        for(int i = 10; i > 0; i--)
+//        {
+//            System.out.println(i);
+//        }
+//        for(int i = 0; i < 10; i+=2)
+//        {
+//            System.out.println(i);
+//        }
 
-        System.out.println("Number Guessing Game");
-        System.out.printf("Guess a number between %d-%d: ", min, max);
-        do
+//        System.out.print("Enter how many times you want to loop: ");
+//        int max = scanner.nextInt();
+//
+//        for(int i = 0; i<= max; i++)
+//        {
+//            System.out.println(i);
+//        }
+
+        System.out.print("How many seconds to countdown from?: ");
+        int start = scanner.nextInt();
+
+        for(int i = start; i>0;i--)
         {
-            System.out.print("Enter a guess: ");
-            guess = scanner.nextInt();
-            attempts++;
+            System.out.println(i);
+            Thread.sleep(1000);
+        }
 
-            if(guess<randomNumber)
-            {
-                System.out.println("TOO LOW! Try again");
-            } else if (guess>randomNumber)
-            {
-                System.out.println("TOO HIGH! Try again");
-            }
-            else
-            {
-                System.out.printf("CORRECT! The number was %d\n",randomNumber);
-            }
-        } while(guess != randomNumber);
-
-        System.out.printf("# of attempts: %d",attempts);
+        System.out.println("HAPPY NEW YEAR!");
 
         scanner.close();
     }
