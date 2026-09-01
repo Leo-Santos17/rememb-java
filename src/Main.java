@@ -1,52 +1,67 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args)
     {
-        // &&   = AND
-        // ||   = OR
-        // !    = NOT
-
-//        double temp = 20;
-//        boolean isSunny = true;
-//
-//        if(temp <= 30 && temp >= 0 && isSunny)
-//        {
-//            System.out.println("The weather is GOOD");
-//            System.out.println("It is SUNNY outside");
-//        }
-//        else if(temp <= 30 && temp >= 0 && !isSunny)
-//        {
-//            System.out.println("The weather is GOOD");
-//            System.out.println("It is CLOUDY outside");
-//        }
-//        else if(temp > 30 || temp < 0)
-//        {
-//            System.out.println("The weather is bad");
-//        }
-
         Scanner scanner = new Scanner(System.in);
 
-        // username must be between 4-12 characters
-        // username must not contain spaces or underscores
+//        String name = "";
+//
+//        while(name.isEmpty())
+//        {
+//            System.out.print("Enter your name: ");
+//            name = scanner.nextLine();
+//        }
+//
+//        System.out.printf("Hello %s", name);
 
-        String username;
+//        while (1==1)
+//        {
+//            System.out.println("HELP! I'M STUCK IN A LOOP");
+//        }
 
-        System.out.print("Enter your new username: ");
-        username = scanner.nextLine();
+//        String response = "";
+//
+//        while(!response.equals("Q"))
+//        {
+//            System.out.println("You are playing a game");
+//            System.out.print("Press Q to quit: ");
+//            response = scanner.next().toUpperCase();
+//        }
+//
+//        System.out.println("You have quit the game");
 
-        if(username.length() < 4 || username.length() > 12)
+
+//        int age = 0;
+//
+//        System.out.print("Enter your age: ");
+//        age = scanner.nextInt();
+//
+//        while(age < 0)
+//        {
+//            System.out.println("Your age can't be negative");
+//            System.out.print("Enter your age: ");
+//            age = scanner.nextInt();
+//        }
+
+//        do {
+//            System.out.println("Your age can't be negative");
+//            System.out.print("Enter your age: ");
+//            age = scanner.nextInt();
+//        } while(age < 0);
+
+//        System.out.printf("You are %d years old",age);
+
+
+        int number = 0;
+        while(number<1||number>10)
         {
-            System.out.println("Username must be between 4-12 characters");
+            System.out.print("Enter a number between 1 - 10: ");
+            number = scanner.nextInt();
         }
-        else if(username.contains(" ") || username.contains("_"))
-        {
-            System.out.println("Username must not contain spaces or underscores");
-        }
-        else
-        {
-            System.out.printf("Welcome %s\n", username);
-        }
+
+        System.out.printf("You picked %d\n",number);
 
         scanner.close();
     }
