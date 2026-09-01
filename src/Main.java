@@ -3,21 +3,40 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-        // break = break out of a loop (STOP)
-        // continue = skip current iteration of a loop (SKIP)
+        // nested loop = A loop inside another loop
+        //               Used often with matrices or DS&A
 
-        for(int i = 0; i < 10; i++)
+        Scanner scanner = new Scanner(System.in);
+
+        int rows;
+        int columns;
+        char symbol;
+
+//        for(int i = 1; i <= 3; i++)
+//        {
+//            for(int j = 1; j <= 9; j++)
+//            {
+//                System.out.print(j + " ");
+//            }
+//            System.out.println();
+//        }
+
+        System.out.print("Enter the $ of rows: ");
+        rows = scanner.nextInt();
+        System.out.print("Enter the $ of columns: ");
+        columns = scanner.nextInt();
+        System.out.print("Enter the symbol to use: ");
+        symbol = scanner.next().charAt(0);
+
+        for(int i = 0; i < rows; i++)
         {
-            if(i == 5)
-            {
-                continue;
+            for (int j = 0; j < columns; j++) {
+                System.out.println(symbol);
             }
-            if(i == 9)
-            {
-                break;
-            }
-
-            System.out.println(i + " ");
+            System.out.println();
         }
+
+        scanner.close();
+
     }
 }
