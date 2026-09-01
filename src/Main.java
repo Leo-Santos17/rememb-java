@@ -1,42 +1,59 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-        // nested loop = A loop inside another loop
-        //               Used often with matrices or DS&A
+        // method = a block of reusable code that is executed when called ()
 
-        Scanner scanner = new Scanner(System.in);
+        //String name = "Spongebob";
+        //int age = 25;
+        //happyBirthday(name, age);
+        //double resul = square(3);
+        //double resul = cube(3);
+        //String fullname = getFullName("Spongebob", "Squarepants");
 
-        int rows;
-        int columns;
-        char symbol;
+        int age = 21;
 
-//        for(int i = 1; i <= 3; i++)
-//        {
-//            for(int j = 1; j <= 9; j++)
-//            {
-//                System.out.print(j + " ");
-//            }
-//            System.out.println();
-//        }
 
-        System.out.print("Enter the $ of rows: ");
-        rows = scanner.nextInt();
-        System.out.print("Enter the $ of columns: ");
-        columns = scanner.nextInt();
-        System.out.print("Enter the symbol to use: ");
-        symbol = scanner.next().charAt(0);
-
-        for(int i = 0; i < rows; i++)
+        if(ageCheck(age))
         {
-            for (int j = 0; j < columns; j++) {
-                System.out.println(symbol);
-            }
-            System.out.println();
+            System.out.println("You may sign up!");
+        }
+        else
+        {
+            System.out.println("You muut be 18+ to sign up");
         }
 
-        scanner.close();
-
     }
+
+    static void happyBirthday(String name, int age)
+    {
+        System.out.println("Happy Birthday to you!");
+        System.out.printf("Happy Birthday dear %s!\n", name);
+        System.out.printf("You are %d years old!\n", age);
+        System.out.println("Happy Birthday to you!\n");
+    }
+    static double square(double number)
+    {
+        return number*number;
+    }
+    static double cube(double number)
+    {
+        return number*number*number;
+    }
+    static String getFullName(String first, String last)
+    {
+        return first + " " + last;
+    }
+    static boolean ageCheck(int age)
+    {
+        if(age >= 18)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
 }
