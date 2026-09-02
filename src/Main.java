@@ -1,43 +1,22 @@
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    static int x = 3; // Class
 
-        // overloaded methods = methods that share the same name,
-        //                      but different parameters
-        //                      signature = name + parameters
+    public static void main(String[] args){
+        // variable scope = where a variable can be accessed
+        int x = 1; // Local
 
-
-        String pizza = bakePizza("flat bread");
-
-        add(1,2,3);
-        add(1,2);
-
+        System.out.println(x);
+        doSomething();
+        writeX();
     }
-    static String bakePizza(String bread)
+    static void doSomething()
     {
-        return bread + " pizza";
+        int x = 2; // Local
+        System.out.println(x);
     }
-    static String bakePizza(String bread, String chesse)
+    static void writeX()
     {
-        return chesse + " " + bread + " pizza";
-    }
-    static String bakePizza(String bread, String chesse, String topping)
-    {
-        return topping + " " + chesse + " " + bread + " pizza";
-    }
-
-
-
-    static double add(double a, double b)
-    {
-        return a+b;
-    }
-    static double add(double a, double b, double c)
-    {
-        return a+b+c;
-    }
-    static double add(double a, double b, double c, double d)
-    {
-        return a+b+c+d;
+        System.out.println(x);
     }
 
 }
