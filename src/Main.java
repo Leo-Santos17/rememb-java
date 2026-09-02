@@ -1,59 +1,43 @@
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-        // method = a block of reusable code that is executed when called ()
-
-        //String name = "Spongebob";
-        //int age = 25;
-        //happyBirthday(name, age);
-        //double resul = square(3);
-        //double resul = cube(3);
-        //String fullname = getFullName("Spongebob", "Squarepants");
-
-        int age = 21;
+        // overloaded methods = methods that share the same name,
+        //                      but different parameters
+        //                      signature = name + parameters
 
 
-        if(ageCheck(age))
-        {
-            System.out.println("You may sign up!");
-        }
-        else
-        {
-            System.out.println("You muut be 18+ to sign up");
-        }
+        String pizza = bakePizza("flat bread");
+
+        add(1,2,3);
+        add(1,2);
 
     }
-
-    static void happyBirthday(String name, int age)
+    static String bakePizza(String bread)
     {
-        System.out.println("Happy Birthday to you!");
-        System.out.printf("Happy Birthday dear %s!\n", name);
-        System.out.printf("You are %d years old!\n", age);
-        System.out.println("Happy Birthday to you!\n");
+        return bread + " pizza";
     }
-    static double square(double number)
+    static String bakePizza(String bread, String chesse)
     {
-        return number*number;
+        return chesse + " " + bread + " pizza";
     }
-    static double cube(double number)
+    static String bakePizza(String bread, String chesse, String topping)
     {
-        return number*number*number;
-    }
-    static String getFullName(String first, String last)
-    {
-        return first + " " + last;
-    }
-    static boolean ageCheck(int age)
-    {
-        if(age >= 18)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return topping + " " + chesse + " " + bread + " pizza";
     }
 
+
+
+    static double add(double a, double b)
+    {
+        return a+b;
+    }
+    static double add(double a, double b, double c)
+    {
+        return a+b+c;
+    }
+    static double add(double a, double b, double c, double d)
+    {
+        return a+b+c+d;
+    }
 
 }
