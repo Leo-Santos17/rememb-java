@@ -1,45 +1,54 @@
+import java.util.Scanner;
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args){
 
-        // 2D array = An array where each element is an array
-        //            Useful for storing a matrix of data
+        // JAVA QUIZ GAME
+        String[] questions = {"What is the main function of a router?",
+                             "Which part of the computer is considered the brain?",
+                             "What year was Facebook launched?",
+                             "Who is know as the father of computer?",
+                             "What was the first programming language"};
 
-//        String[] fruits = {"apple", "orange", "banana"};
-//        String[] vegetables = {"potato", "onion", "carrot"};
-//        String[] meats = {"chicken", "pork", "beef", "fish"};
-//
-//        String[][] groceries = {fruits, vegetables, meats};
-        /* Equivalent that
-        String[][] groceries = {{"apple", "orange", "banana"},
-                                {"potato", "onion", "carrot"},
-                                {"chicken", "pork", "beef", "fish"}}
-         */
-//        groceries[0][0] = "pineapple";
-//        groceries[1][2] = "celery";
-//        groceries[2][1] = "eggs";
-//
-//        for(String[] foods: groceries)
-//        {
-//            for(String food: foods)
-//            {
-//                System.out.print(food + " ");
-//            }
-//            System.out.println();
-//        }
+        String[][] options = {{"1. Storing files", "2. Encrypting data", "3. Directing internet traffic", "4. Managing passwords"},
+                             {"1. CPU", "2. Hard Drive", "3. RAM", "4. GPU"},
+                             {"1. 2000", "2. 2004", "3. 2006", "4. 2008"},
+                             {"1. Steve Jobs", "2. Bill Gates", "3. Alan Turing", "4. Charles Babbage"},
+                             {"1. COBOL", "2. C", "3. Fortran", "4. Assembly"}};
 
-        char[][] telephone = {{'1','2','3'},
-                {'4', '5', '6'},
-                {'7', '8', '9'},
-                {'*', '0', '#'}};
+        int[] answers = {3, 1, 2, 4, 3};
+        int score = 0;
+        int guess;
 
-        for(char[] row: telephone)
+        System.out.println("******************************");
+        System.out.println("Welcome to the Java Quiz Game!");
+        System.out.println("******************************");
+
+        for(int i = 0; i < questions.length; i++)
         {
-            for(char number: row)
+            System.out.println(questions[i]);
+            for(String option: options[i])
             {
-                System.out.print(number+" ");
+                System.out.println(option);
             }
-            System.out.println();
-        }
+            System.out.print("Enter your guess: ");
+            guess = scanner.nextInt();
 
+            if(guess == answers[i])
+            {
+                System.out.println("********");
+                System.out.println("CORRECT!");
+                System.out.println("********");
+                score++;
+            }
+            else
+            {
+                System.out.println("********");
+                System.out.println(" WRONG! ");
+                System.out.println("********");
+            }
+        }
+        System.out.println("Your final score is: "+ score +" out of "+ questions.length);
+        scanner.close();
     }
 }
