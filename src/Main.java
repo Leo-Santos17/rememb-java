@@ -1,36 +1,47 @@
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
-
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args){
+//        String[] foods = new String[3];
+//
+//        foods[0] = "pizza";
+//        System.out.println(foods.length);
+//        writeArray(foods);
+//        foods[1] = "taco";
+//        writeArray(foods);
+//        foods[2] = "Hamburguer";
+        // foods[3] = "Pineapple"; // Error
+//        String[] foods = new String[4]; // Define specify # of index
 
-        // Array = a collection of values of the same data type
-        //         * think of it as a variable that can store more than 1 value *
-        String[] fruits = {"apple", "orange", "banana", "coconut"};
-        System.out.println(fruits[0]);
+        String[] foods;
+        int size;
 
-//        fruits[0] = "pineapple";
-//        System.out.println(fruits[0]);
+        System.out.print("What # of food do you want?: ");
+        size = scanner.nextInt();
+        scanner.nextLine();
 
-//        int numOfFruits = fruits.length;
-//        System.out.println(numOfFruits);
+        foods = new String[size]; // Number of indexes
 
-//        for(int i = 0; i < fruits.length; i++)
-//        {
-//            System.out.print(fruits[i]+"; ");
-//        }
-
-//        for(String fruit : fruits)
-//        {
-//            System.out.println(fruit);
-//        }
-
-//        Arrays.sort(fruits);
-        Arrays.fill(fruits, "pineapple");
-        for(String fruit:fruits)
+        for(int i = 0; i < foods.length; i++)
         {
-            System.out.println(fruit);
+            System.out.println("Enter a food: ");
+            foods[i] = scanner.nextLine();
         }
+
+        writeArray(foods);
+
+        scanner.close();
+    }
+
+    static void writeArray(String[] content)
+    {
+        System.out.println("------------------");
+        for(String item: content)
+        {
+            System.out.println(item);
+        }
+        System.out.println("------------------");
     }
 
 }
