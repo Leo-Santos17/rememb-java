@@ -1,41 +1,45 @@
 public class Main {
     public static void main(String[] args){
 
-        // varargs = allow a method to accept a varying # of arguments
-        //           makes methods more flexible, no need for overloaded methods
-        //           java will pack the arguments into an array
-        //           ... (ellipsis)
+        // 2D array = An array where each element is an array
+        //            Useful for storing a matrix of data
 
-        //System.out.println(add(1,2,3)); // Error: Over parameters to add() method
-        System.out.println(sum(1,2,3,4,5));
-        System.out.println(average(1,2,3,4));
+//        String[] fruits = {"apple", "orange", "banana"};
+//        String[] vegetables = {"potato", "onion", "carrot"};
+//        String[] meats = {"chicken", "pork", "beef", "fish"};
+//
+//        String[][] groceries = {fruits, vegetables, meats};
+        /* Equivalent that
+        String[][] groceries = {{"apple", "orange", "banana"},
+                                {"potato", "onion", "carrot"},
+                                {"chicken", "pork", "beef", "fish"}}
+         */
+//        groceries[0][0] = "pineapple";
+//        groceries[1][2] = "celery";
+//        groceries[2][1] = "eggs";
+//
+//        for(String[] foods: groceries)
+//        {
+//            for(String food: foods)
+//            {
+//                System.out.print(food + " ");
+//            }
+//            System.out.println();
+//        }
 
-    }
+        char[][] telephone = {{'1','2','3'},
+                {'4', '5', '6'},
+                {'7', '8', '9'},
+                {'*', '0', '#'}};
 
-    static double add(int a, int b)
-    {
-        return a+b;
-    }
-    static int sum(int... numbers)
-    {
-        int sum = 0;
-
-        for(int number: numbers)
+        for(char[] row: telephone)
         {
-            sum+=number;
+            for(char number: row)
+            {
+                System.out.print(number+" ");
+            }
+            System.out.println();
         }
 
-        return sum;
-    }
-    static double average(double... numbers)
-    {
-        double sum = 0;
-
-        for(double number: numbers)
-        {
-            sum += number;
-        }
-
-        return sum/numbers.length;
     }
 }
