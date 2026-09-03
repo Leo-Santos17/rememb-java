@@ -1,42 +1,41 @@
-import java.util.Scanner;
 public class Main {
-    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args){
 
-//        int[] numbers = {1,9,2,8,3,5,4};
-//        int target = 9;
-        String[] fruits = {"apple", "orange", "banana"};
-        boolean isFound = false;
+        // varargs = allow a method to accept a varying # of arguments
+        //           makes methods more flexible, no need for overloaded methods
+        //           java will pack the arguments into an array
+        //           ... (ellipsis)
 
-        System.out.print("Enter a fruit to search for: ");
-        String target = scanner.nextLine();
+        //System.out.println(add(1,2,3)); // Error: Over parameters to add() method
+        System.out.println(sum(1,2,3,4,5));
+        System.out.println(average(1,2,3,4));
 
+    }
 
-//        for(int i = 0; i < numbers.length; i++)
-//        {
-//            if(target == numbers[i])
-//            {
-//                System.out.println("Element found at index: "+i);
-//                isFound = true;
-//                break;
-//            }
-//        }
+    static double add(int a, int b)
+    {
+        return a+b;
+    }
+    static int sum(int... numbers)
+    {
+        int sum = 0;
 
-        for(int i = 0; i < fruits.length; i++)
+        for(int number: numbers)
         {
-            if(fruits[i].equals(target))
-            {
-                System.out.println("Element found at index: "+i);
-                isFound = true;
-                break;
-            }
+            sum+=number;
         }
 
-        if(!isFound)
+        return sum;
+    }
+    static double average(double... numbers)
+    {
+        double sum = 0;
+
+        for(double number: numbers)
         {
-            System.out.println("Element not found in the array!");
+            sum += number;
         }
 
-        scanner.close();
+        return sum/numbers.length;
     }
 }
