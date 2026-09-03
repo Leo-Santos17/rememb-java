@@ -1,47 +1,42 @@
 import java.util.Scanner;
-
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args){
-//        String[] foods = new String[3];
-//
-//        foods[0] = "pizza";
-//        System.out.println(foods.length);
-//        writeArray(foods);
-//        foods[1] = "taco";
-//        writeArray(foods);
-//        foods[2] = "Hamburguer";
-        // foods[3] = "Pineapple"; // Error
-//        String[] foods = new String[4]; // Define specify # of index
 
-        String[] foods;
-        int size;
+//        int[] numbers = {1,9,2,8,3,5,4};
+//        int target = 9;
+        String[] fruits = {"apple", "orange", "banana"};
+        boolean isFound = false;
 
-        System.out.print("What # of food do you want?: ");
-        size = scanner.nextInt();
-        scanner.nextLine();
+        System.out.print("Enter a fruit to search for: ");
+        String target = scanner.nextLine();
 
-        foods = new String[size]; // Number of indexes
 
-        for(int i = 0; i < foods.length; i++)
+//        for(int i = 0; i < numbers.length; i++)
+//        {
+//            if(target == numbers[i])
+//            {
+//                System.out.println("Element found at index: "+i);
+//                isFound = true;
+//                break;
+//            }
+//        }
+
+        for(int i = 0; i < fruits.length; i++)
         {
-            System.out.println("Enter a food: ");
-            foods[i] = scanner.nextLine();
+            if(fruits[i].equals(target))
+            {
+                System.out.println("Element found at index: "+i);
+                isFound = true;
+                break;
+            }
         }
 
-        writeArray(foods);
+        if(!isFound)
+        {
+            System.out.println("Element not found in the array!");
+        }
 
         scanner.close();
     }
-
-    static void writeArray(String[] content)
-    {
-        System.out.println("------------------");
-        for(String item: content)
-        {
-            System.out.println(item);
-        }
-        System.out.println("------------------");
-    }
-
 }
