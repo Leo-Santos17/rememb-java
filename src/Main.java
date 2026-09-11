@@ -1,123 +1,34 @@
-import java.util.Scanner;
-import java.util.Random;
 public class Main {
-    static Scanner scanner = new Scanner(System.in);
-    static Random random = new Random();
     public static void main(String[] args){
-        // Java Slot Machine
-        int balance = 100;
-        int bet;
-        int payout;
-        String[] row;
-        boolean playAgain = true;
+        // Object = An entity that holds data (attributes)
+        //          and can perform actions (methods)
+        //          It is a reference data type
 
-        System.out.println("*************************");
-        System.out.println("  Welcome to Java Slots");
-        System.out.println("Symbols: 🍒 🍉 🍋 🔔 ⭐");
-        System.out.println("*************************");
-        while (balance>0 && playAgain)
-        {
-            System.out.println("Current balance: $"+balance);
-            System.out.print("Place your bet amount: ");
-            bet = scanner.nextInt();
-            scanner.nextLine();
+        Car car = new Car();
 
-            if(bet > balance)
-            {
-                System.out.println("INSUFFICIENT FUNDS");
-                continue;
-            }
-            else if(bet <= 0)
-            {
-                System.out.println("Bet must be greater than 0");
-            }
-            else
-            {
-                balance -= bet;
-            }
+        System.out.println(car.make);
+        System.out.println(car.year);
+        System.out.println(car.price);
+        System.out.println(car.model);
+        System.out.println(car.isRunning);
 
-            System.out.println("Spinning...");
-            row = spinRow();
-            printRow(row);
-            payout = getPayout(row, bet);
+        // Change attributes
+        car.isRunning = true;
+        System.out.println(car.isRunning);
 
-            if(payout > 0)
-            {
-                System.out.println("You won $"+payout);
-                balance += payout;
-            }
-            else
-            {
-                System.out.println("Sorry you lost this round");
-            }
+        // Car Actions (Methods)
+        car.stop();
+        System.out.println(car.isRunning);
+        car.start();
+        System.out.println(car.isRunning);
+        car.drive();
+        car.brake();
 
-            System.out.print("Do you want to play again? (Y/N): ");
-            playAgain = scanner.next().toUpperCase().charAt(0) == 'Y'?true:false;
+        // Created new Car
+        Car car1 = new Car();
+        Car car2 = new Car();
 
-        }
-
-        System.out.println("GAME OVER! Your final balance is $"+balance);
-        scanner.close();
-    }
-    static String[] spinRow()
-    {
-        String[] symbols = {"🍒", "🍉", "🍋", "🔔", "⭐"};
-        String[] row = new String[3];
-
-        for(int i = 0; i < 3; i++)
-        {
-            row[i] = symbols[random.nextInt(symbols.length)];
-        }
-
-        return row;
-    }
-
-    static void printRow(String[] row)
-    {
-        System.out.println("************************");
-        System.out.println(" "+String.join(" | ", row));
-        System.out.println("************************");
-    }
-
-    static int getPayout(String[] row, int bet)
-    {
-        if(row[0].equals(row[1]) && row[1].equals(row[2]))
-        {
-            return switch(row[0])
-            {
-                case "🍒" -> bet * 3;
-                case "🍉" -> bet * 4;
-                case "🍋" -> bet * 5;
-                case "🔔" -> bet * 10;
-                case "⭐" -> bet * 20;
-                default -> 0;
-            };
-        }
-        else if (row[0].equals(row[1]))
-        {
-            return switch (row[0])
-            {
-                case "🍒" -> bet * 2;
-                case "🍉" -> bet * 3;
-                case "🍋" -> bet * 4;
-                case "🔔" -> bet * 5;
-                case "⭐" -> bet * 10;
-                default -> 0;
-            };
-        }
-        else if (row[1].equals(row[2]))
-        {
-            return switch (row[1])
-            {
-                case "🍒" -> bet * 2;
-                case "🍉" -> bet * 3;
-                case "🍋" -> bet * 4;
-                case "🔔" -> bet * 5;
-                case "⭐" -> bet * 10;
-                default -> 0;
-            };
-        }
-
-        return 0;
+        System.out.println(car1);
+        System.out.println(car2);
     }
 }
