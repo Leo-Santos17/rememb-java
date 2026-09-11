@@ -1,34 +1,31 @@
 public class Main {
     public static void main(String[] args){
-        // Object = An entity that holds data (attributes)
-        //          and can perform actions (methods)
-        //          It is a reference data type
+        // constructor = A special method to initialize objects
+        //               You can pass arguments to a constructor
+        //               and set ip initial values
+        Student student1 = new Student("Spongebob", 30, 3.2);
+        Student student2 = new Student("Patrick", 34, 1.5);
+        Student student3 = new Student("Sandy", 27, 4.0);
 
-        Car car = new Car();
+        System.out.println(student1.name);
+        System.out.println(student1.age);
+        System.out.println(student1.gpa);
+        System.out.println(student1.isEnrolled);
+        System.out.println();
+        System.out.println(student2.name);
+        System.out.println(student2.age);
+        System.out.println(student2.gpa);
+        System.out.println(student2.isEnrolled);
+        System.out.println();
+        System.out.println(student3.name);
+        System.out.println(student3.age);
+        System.out.println(student3.gpa);
+        System.out.println(student3.isEnrolled);
+        System.out.println();
+        // Actions
+        student1.study();
+        student2.study();
+        student3.study();
 
-        System.out.println(car.make);
-        System.out.println(car.year);
-        System.out.println(car.price);
-        System.out.println(car.model);
-        System.out.println(car.isRunning);
-
-        // Change attributes
-        car.isRunning = true;
-        System.out.println(car.isRunning);
-
-        // Car Actions (Methods)
-        car.stop();
-        System.out.println(car.isRunning);
-        car.start();
-        System.out.println(car.isRunning);
-        car.drive();
-        car.brake();
-
-        // Created new Car
-        Car car1 = new Car();
-        Car car2 = new Car();
-
-        System.out.println(car1);
-        System.out.println(car2);
     }
 }
