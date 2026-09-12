@@ -1,31 +1,22 @@
 public class Main {
     public static void main(String[] args){
 
-        // inheritance = One class inherits the attributes and methods
-        //               from another class
-        //               Child <- Parent <- Grandparent
+        // super = Refers to the parent class (subclass <- superclass)
+        //         Used in constructors and method overriding
+        //         Calls the parent constructor to initialize attributes
 
-        Dog dog = new Dog();
-        Cat cat = new Cat();
+        Person person = new Person("Tom", "Riddle");
+        Student student  = new Student("Harry", "Potter", 3.25);
 
-        System.out.println(dog.isAlive);
-        System.out.println(cat.isAlive);
 
-        dog.eat();
-        cat.eat();
+        student.showName();
+        student.showGPA();
 
-        dog.speak();
-        cat.speak();
+        System.out.println(student.gpa);
 
-        // Post Organism Class
-        System.out.println(dog.isAlive);
-        System.out.println(cat.isAlive);
+        // Class Employee
+        Employee employee = new Employee("Rubeus", "Hagrid", 50000);
 
-        Plant plant = new Plant();
-        System.out.println(plant.isAlive);
-        plant.photosynthesize();
-
-        // plant.photosynthesize(); // Error but method not exists
-
+        employee.showSalary();
     }
 }
