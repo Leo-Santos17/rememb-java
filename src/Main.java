@@ -1,27 +1,16 @@
 public class Main {
     public static void main(String[] args){
-        Car car1 = new Car("Mustang", "Red");
-        Car car2 = new Car("Corvette", "Blue");
-        Car car3 = new Car("Charger", "Yellow");
 
-        Car[] cars = {car1, car2, car3};
+        // static = Makes a variable or method belong to the class
+        //          rather than to any specific object.
+        //          Commonly used for utility methods or shared resources.
 
-        for (Car car : cars)
-        {
-            car.drive();
-        }
+        Friend friend1 = new Friend("Spongebob");
+        Friend friend2 = new Friend("Patrick");
+        Friend friend3 = new Friend("Squirdward");
+        Friend friend4 = new Friend("Sandy");
+        Friend friend5 = new Friend("Dary");
 
-        Car[] cars1 = {new Car("Mustang", "Red"),
-                       new Car("Corvette", "Blue"),
-                       new Car("Charger", "Yellow")
-        };
-        for (Car car: cars1)
-        {
-            car.color = "black";
-        }
-        for (Car car: cars1)
-        {
-            car.drive();
-        }
+        Friend.showFriends();
     }
 }
