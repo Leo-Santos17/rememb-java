@@ -1,4 +1,5 @@
-public class Book extends Library{
+public class Book extends Library
+{
     String name;
     boolean isAvailable;
 
@@ -6,12 +7,5 @@ public class Book extends Library{
     {
         this.name = name;
         this.isAvailable = true;
-        numOfBooks++;
     }
-
-    public boolean switchAvailable(Book book)
-    {
-        return !book.isAvailable;
-    }
-
 }

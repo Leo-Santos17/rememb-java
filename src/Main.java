@@ -1,13 +1,17 @@
 public class Main {
     public static void main(String[] args){
         // Lib System
-        Book book1 = new Book("Sex Gay: batalha das espadas");
-        Book book2 = new Book("Manual didático: criando uma mp5");
-        Book book3 = new Book("Livro amarelo box completo");
-        User user = new User("Gustavo");
-        user.setBooks(book3);
-        user.setBooks(book2);
-        user.setBooks(book2);
-        user.setBooks(book1);
+        Book[] books = {
+            new Book("Sex with hitler 1"),
+            new Book("Sex with hitler 2"),
+            new Book("Sex with hitler 3")
+        };
+        Library biblioteca = new Library();
+        biblioteca.setBooks(books);
+        System.out.println(biblioteca.getBooks());
+        biblioteca.readAll();
+        biblioteca.lentBook(books[1]);
+        biblioteca.getLentBook();
+        biblioteca.getAvailableBook();
     }
 }
