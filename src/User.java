@@ -1,4 +1,4 @@
-public class User extends Library{
+public class User{
     String name;
     Book[] lentBooks;
 
@@ -10,7 +10,7 @@ public class User extends Library{
 
     void alugarLivro(Book book)
     {
-        if(temLivroDisponivel(book))
+        if(Library.temLivroDisponivel(book))
         {
             Book[] temp = lentBooks;
             this.lentBooks = new Book[lentBooks.length + 1];
@@ -18,8 +18,8 @@ public class User extends Library{
                 this.lentBooks[i] = temp[i];
             }
             this.lentBooks[lentBooks.length - 1] = book;
-            statusLivro(book);
-            atribuirUsuario(book, this);
+            Library.statusLivro(book);
+            Library.atribuirUsuario(book, this);
             System.out.println("------------------------------------------");
             System.out.println("            Livro Emprestado");
             System.out.println(book.name);
@@ -31,7 +31,6 @@ public class User extends Library{
             System.out.println("        Este livro foi emprestado");
             System.out.println(book.name);
             System.out.println("------------------------------------------");
-
         }
     }
 
@@ -40,7 +39,7 @@ public class User extends Library{
         Book[] temp = this.lentBooks;
         for(Book book:this.lentBooks)
         {
-            devolverLivro(book);
+            Library.devolverLivro(book);
         }
         this.lentBooks = new Book[0];
     }
@@ -48,13 +47,14 @@ public class User extends Library{
     void devolver(Book book)
     {
 
-        if(!temLivroDisponivel(book))
+        if(!Library.temLivroDisponivel(book))
         {
             int count = 0;
             Book[] bookTemp;
-            for (Book sel : this.lentBooks) {
+            for (Book sel : this.lentBooks)
+            {
                 if (sel == book) {
-                    devolverLivro(book);
+                    Library.devolverLivro(book);
                 }
             }
             for (int i = 0; i < this.lentBooks.length; i++) {

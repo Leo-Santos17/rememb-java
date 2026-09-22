@@ -1,4 +1,4 @@
-public class Book extends Library
+public class Book
 {
     String name;
     boolean isAvailable;

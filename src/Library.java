@@ -3,13 +3,14 @@ public class Library{
 
     Library(){}
 
-    void statusLivro(Book book) { book.isAvailable = !book.isAvailable; }
+    static void statusLivro(Book book) { book.isAvailable = !book.isAvailable; }
 
-    void atribuirUsuario(Book book, User user) { book.person = user;}
+    static void atribuirUsuario(Book book, User user) { book.person = user;}
 
-    void devolverLivro(Book book)
+    static void devolverLivro(Book book)
     {
         book.isAvailable = true;
+        book.person = null;
     }
 
     void verificarTodosLivros()
@@ -64,10 +65,10 @@ public class Library{
         }
         System.out.println("------------------");
     }
-    
-    boolean temLivroDisponivel(Book book)
+
+    static boolean temLivroDisponivel(Book book)
     {
-        for(Book sel: this.estante)
+        for(Book sel: estante)
         {
             if(book == sel && sel.isAvailable)
             {
