@@ -2,6 +2,7 @@ public class Book extends Library
 {
     String name;
     boolean isAvailable;
+    User person;
 
     Book(String name)
     {
