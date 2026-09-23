@@ -7,23 +7,26 @@ public class Main {
         new Desenvolvedor("Chad")};
 
         // Reader lista
+        System.out.println("------------------------------------------------------------------------------------");
+        System.out.println("                        Lista de funcionários");
         for(Funcionario func : lista)
         {
-            System.out.println(func.name);
-            System.out.println(func.role);
-            System.out.println(func.salary);
+            System.out.println("Nome: "+func.name);
+            System.out.println("Cargo: "+func.role);
+            System.out.println("Salário: R$"+func.salary);
             System.out.println("_--_--_--_--_--_--_--_--_--_--_--_--");
         }
 
         // Bonus lista
         System.out.println("------------------------------------------------------------------------------------");
+        System.out.println("                            Pagamento");
         for(Funcionario func : lista)
         {
-            System.out.println(func.name);
-            System.out.println(func.role);
-            System.out.println(func.salary);
-            System.out.println(func.bonificacao());
-            System.out.println(func.bonificacaoTotal());
+            System.out.println("Nome: "+func.name);
+            System.out.println("Cargo: "+func.role);
+            System.out.println("Salário: R$"+func.salary);
+            System.out.println("Bonificação: R$"+func.bonificacao());
+            System.out.println("Salário + Bonificação: R$"+func.bonificacaoTotal());
             System.out.println("_--_--_--_--_--_--_--_--_--_--_--_--");
         }
 
