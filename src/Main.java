@@ -1,35 +1,16 @@
 public class Main {
     public static void main(String[] args){
-        Funcionario[] lista = {new Desenvolvedor("Jorge"),
-        new Gerente("Gaynilson"),
-        new Estagiario("Fernando"),
-        new Gerente("Viadilson"),
-        new Desenvolvedor("Chad")};
+        Veiculo[] garagem = {
+                new Moto("Honda", "Sahada", 2020, true),
+                new Carro("Toyota", "Corolla", 2018, 4),
+                new Caminhao("Volks", "Hyu", 2012, 1000),
+                new Carro("Honda", "Civic", 2025, 2),
+                new Moto("Suzuku", "SAX", 2011, false)
+        };
 
-        // Reader lista
-        System.out.println("------------------------------------------------------------------------------------");
-        System.out.println("                        Lista de funcionários");
-        for(Funcionario func : lista)
+        for(Veiculo veiculo: garagem)
         {
-            System.out.println("Nome: "+func.name);
-            System.out.println("Cargo: "+func.role);
-            System.out.println("Salário: R$"+func.salary);
-            System.out.println("_--_--_--_--_--_--_--_--_--_--_--_--");
+            veiculo.mostrarInformacoes();
         }
-
-        // Bonus lista
-        System.out.println("------------------------------------------------------------------------------------");
-        System.out.println("                            Pagamento");
-        for(Funcionario func : lista)
-        {
-            System.out.println("Nome: "+func.name);
-            System.out.println("Cargo: "+func.role);
-            System.out.println("Salário: R$"+func.salary);
-            System.out.println("Bonificação: R$"+func.bonificacao());
-            System.out.println("Salário + Bonificação: R$"+func.bonificacaoTotal());
-            System.out.println("_--_--_--_--_--_--_--_--_--_--_--_--");
-        }
-
-
     }
 }
