@@ -10,7 +10,6 @@ public class ContaPoupanca extends Conta{
         System.out.println("Conta Poupança criada");
     }
 
-    @Override
     void aplicarRendimento()
     {
         System.out.println("Aplicando rendimento...");
@@ -24,6 +23,4 @@ public class ContaPoupanca extends Conta{
         super.mostrarInformacoes();
         System.out.println("Taxa de rendimento: "+(taxaRendimento-1)*100+"%");
     }
-
-
 }

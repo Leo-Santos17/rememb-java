@@ -12,7 +12,7 @@ public class ContaCorrente extends Conta{
 
     @Override
     void sacar(double valor) {
-        if(this.saldo < valor+this.limite)
+        if(this.saldo > valor+this.limite)
         {
             this.saldo -= valor;
             System.out.println();
