@@ -3,10 +3,10 @@ public class Produto {
     double preco;
     int quantidade;
 
-    Produto(String name)
+    Produto(String name, double price, int quantity)
     {
-        this.nome = name;
-        preco = 0;
-        quantidade = 1;
+            this.nome = name;
+            this.preco = price;
+            this.quantidade = quantity;
     }
 }

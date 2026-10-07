@@ -10,12 +10,14 @@ public class Cliente
 
     void adicionarProduto(Produto produto)
     {
-        carrinho.setProdutos(produto);
+        this.carrinho.setProdutos(produto);
     }
-
-    void adicionarProdutos(Produto[] produtos)
+    void adicionarProduto(Produto[] produtos)
     {
-        carrinho.setProdutos(produtos);
+        for(Produto produto: produtos)
+        {
+            this.carrinho.setProdutos(produto);
+        }
     }
 
     void mostrarInformacoes()
@@ -32,4 +34,21 @@ public class Cliente
         System.out.println();
         System.out.println("Total: R$ "+preco);
     }
+
+    void removerProduto(String name)
+    {
+        carrinho.remove_stack(name);
+        System.out.println("Removido pelo nome");
+    }
+
+//    void removerProduto(Produto produto)
+//    {
+//        carrinho.remove_stack(produto);
+//        System.out.println("Removido pelo classe");
+//    }
+//    void removerProduto(int pos)
+//    {
+//        this.carrinho.remove_stack(pos);
+//        System.out.println("Removido pela posição no array");
+//    }
 }
