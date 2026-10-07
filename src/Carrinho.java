@@ -38,7 +38,7 @@ public class Carrinho{
         {
             for (Produto produto : this.produtos)
             {
-                if (produto.nome == nome)
+                if (produto.nome.toLowerCase().equals(nome.toLowerCase()))
                 {
                     System.out.println("Produto repetido");
                     return true;
@@ -54,17 +54,21 @@ public class Carrinho{
 
     protected void remove_stack(String name)
     {
-
-        for (int i = 0; i < this.produtos.length; i++) {
-            if(this.produtos[i].nome.toLowerCase().equals(name.toLowerCase()))
-            {
-                System.out.println("Removendo "+this.produtos[i].nome);
-                this.produtos[i] = null;
-                break;
+        if(repeat(name)){
+            for (int i = 0; i < this.produtos.length; i++) {
+                if (this.produtos[i].nome.toLowerCase().equals(name.toLowerCase())) {
+                    System.out.println("Removendo " + this.produtos[i].nome);
+                    this.produtos[i] = null;
+                    break;
+                }
             }
-        }
 
-        sort_stack();
+            sort_stack();
+        }
+        else
+        {
+            System.out.println("Valor não encontrado");
+        }
     }
 
     private void sort_stack()

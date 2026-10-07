@@ -28,8 +28,8 @@ public class Cliente
         System.out.println("-----Carrinho-----");
         for (Produto produto : this.carrinho.getProdutos())
         {
-            System.out.println(produto.nome+", "+produto.preco);
-            preco += produto.preco;
+            System.out.println(produto.nome+", "+produto.preco+" x "+produto.quantidade);
+            preco += (produto.preco*produto.quantidade);
         }
         System.out.println();
         System.out.println("Total: R$ "+preco);
@@ -38,17 +38,5 @@ public class Cliente
     void removerProduto(String name)
     {
         carrinho.remove_stack(name);
-        System.out.println("Removido pelo nome");
     }
-
-//    void removerProduto(Produto produto)
-//    {
-//        carrinho.remove_stack(produto);
-//        System.out.println("Removido pelo classe");
-//    }
-//    void removerProduto(int pos)
-//    {
-//        this.carrinho.remove_stack(pos);
-//        System.out.println("Removido pela posição no array");
-//    }
 }

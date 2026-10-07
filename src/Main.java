@@ -10,7 +10,7 @@ public class Main {
 
         cl1.adicionarProduto(produtos);
         cl1.mostrarInformacoes();
-        cl1.removerProduto("Teclado");
+        cl1.removerProduto("seclado");
         cl1.mostrarInformacoes();
     }
 }
