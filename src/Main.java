@@ -13,6 +13,12 @@ public class Main {
         espaco.set_stack(espacos);
 
         espaco.mostrarInformacoes();
+        espaco.espacosDisponiveis();
+        espaco.fazerReserva(espacos[1]);
+        espaco.fazerReserva(espacos[1]);
+        System.out.println("**********************************");
+        espaco.espacosDisponiveis();
+        espaco.cancelarReserva(espacos[1]);
 
     }
 }

@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class Espaco {
     String nome;
     int capacidade;
@@ -55,4 +57,54 @@ public class Espaco {
         return espacos;
     }
 
+    public void espacosDisponiveis()
+    {
+        System.out.println("Espaços disponíveis\n-------------------------------");
+        for(Espaco espaco: this.espacos)
+        {
+            if(espaco.disponibilidade)
+            {
+                System.out.println(espaco.nome);
+                System.out.println(espaco.capacidade);
+                System.out.println("---------------------------");
+            }
+
+        }
+    }
+
+    public void fazerReserva(Espaco space) {
+        for(Espaco espaco: this.espacos)
+        {
+            if(space.equals(espaco)) {
+                if(espaco.disponibilidade)
+                {
+                    espaco.disponibilidade = false;
+                    System.out.println("Espaço reservado");
+                }
+                else
+                {
+                    System.out.println("Este espaço já está reservado");
+                }
+                break;
+            }
+        }
+    }
+    public void cancelarReserva(Espaco space)
+    {
+        for(Espaco espaco: this.espacos)
+        {
+            if(space.equals(espaco)) {
+                if(!espaco.disponibilidade)
+                {
+                    espaco.disponibilidade = true;
+                    System.out.println("Espaço Disponível");
+                }
+                else
+                {
+                    System.out.println("Este espaço não foi reservado");
+                }
+                break;
+            }
+        }
+    }
 }
