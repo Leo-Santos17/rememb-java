@@ -6,4 +6,14 @@ public class Auditorio extends Espaco{
         super(capacidade, nome);
         this.assentos = assentos;
     }
+
+    @Override
+    public void mostrarEspaco() {
+        System.out.println("Nome: "+getNome()+"\n"+
+                "Disponível: "+getDisponibilidade()+"\n"+
+                "Capacidade: "+getCapacidade()+"\n"+
+                "Tipo: "+this.toString()+"\n"+
+                "Assentos: "+this.assentos);
+    }
+
 }

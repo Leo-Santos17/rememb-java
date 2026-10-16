@@ -3,22 +3,19 @@ public class Main {
 
         Espaco[] espacos = {
             new Auditorio(3, "esa", 2),
-            new Quadra(3, "Benedito", "Poliesportiva"),
-            new Quadra(10, "Joesley", "Poliesportiva"),
-            new Sala(10, "1B", 10),
-            new Sala(20, "2B", 18)
+            new Quadra(3, "Benedito", "Poliesportiva")
         };
 
         Espaco espaco = new Espaco();
-        espaco.set_stack(espacos);
+        espaco.cadastroEspaco(espacos);
 
-        espaco.mostrarInformacoes();
+        espaco.mostrarEspaco();
         espaco.espacosDisponiveis();
         espaco.fazerReserva(espacos[1]);
         espaco.fazerReserva(espacos[1]);
-        System.out.println("**********************************");
         espaco.espacosDisponiveis();
         espaco.cancelarReserva(espacos[1]);
-
+        espaco.mostrarEspaco();
+        espaco.espacosDisponiveis();
     }
 }

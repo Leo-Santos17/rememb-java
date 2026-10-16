@@ -4,23 +4,15 @@ public class Quadra extends Espaco
     Quadra(int capacidade, String nome, String tipo) {
         super(capacidade, nome);
         this.tipo = tipo;
-        setEspacos(this);
         System.out.println("Criado Quadra");
     }
 
-    public void setEspacos(Quadra espaco) {
-        Espaco[] temp = super.espacos;
-        super.espacos = new Espaco[temp.length+1];
-        for (int i = 0; i < super.espacos.length; i++) {
-            System.out.println("Loop Quadra: "+i);
-            if(temp.length > i)
-            {
-                super.espacos[i] = temp[i];
-            }
-            else
-            {
-                super.espacos[i] = espaco;
-            }
-        }
+    @Override
+    public void mostrarEspaco() {
+        System.out.println("Nome: "+getNome()+"\n"+
+                "Disponível: "+getDisponibilidade()+"\n"+
+                "Capacidade: "+getCapacidade()+"\n"+
+                "Tipo: "+this.toString()+"\n"+
+                "Modalidade: "+this.tipo);
     }
 }

@@ -1,34 +1,57 @@
-import java.sql.SQLOutput;
-
 public class Espaco {
-    String nome;
-    int capacidade;
-    boolean disponibilidade;
-    Espaco[] espacos = {};
+    private String nome;
+    private int capacidade;
+    private boolean disponibilidade;
+    protected Espaco[] espacos = {};
 
     Espaco(int capacidade, String nome) {
         this.nome = nome;
         this.capacidade = capacidade;
         this.disponibilidade = true;
-        System.out.println("Criado Espaço");
     }
-    Espaco()
-    {
-        System.out.println("Objeto Vazio");
+    Espaco() {}
+
+    public int getCapacidade() {
+        return this.capacidade;
     }
 
-    public void mostrarInformacoes()
+    public String getNome() {
+        return this.nome;
+    }
+
+    public boolean getDisponibilidade()
     {
-        System.out.println("Mostrando lista...");
-        for(Espaco espaco: getEspacos())
+        return this.disponibilidade;
+    }
+
+    public void mostrarEspacos()
+    {
+        System.out.println("Listando espaços");
+        for (Espaco espaco: espacos)
         {
-            System.out.println(espaco);
+            System.out.println("---------------------------");
+            System.out.println(espaco.toString());
+            System.out.println("Nome: "+espaco.nome);
+            System.out.println("Capacidade: "+espaco.capacidade);
+            System.out.println("---------------------------");
         }
     }
 
-    public void set_stack(Espaco obj)
+    public void mostrarEspaco()
     {
-        System.out.println("Set Espaco: "+this);
+        System.out.println("Nenhum espaço selecionado");
+    }
+
+    public void cadastroEspaco(Espaco[] space)
+    {
+        for(Espaco espaco : space)
+        {
+            set_stack(espaco);
+        }
+    }
+
+    private void set_stack(Espaco obj)
+    {
         Espaco[] temp = this.espacos;
         this.espacos = new Espaco[temp.length+1];
         for (int i = 0; i < this.espacos.length; i++)
@@ -45,27 +68,18 @@ public class Espaco {
 
     }
 
-    public void set_stack(Espaco[] obj)
-    {
-        for(Espaco espaco : obj)
-        {
-            set_stack(espaco);
-        }
-    }
-
-    public Espaco[] getEspacos() {
-        return espacos;
-    }
-
     public void espacosDisponiveis()
     {
-        System.out.println("Espaços disponíveis\n-------------------------------");
+        System.out.println("************************");
+        System.out.println("Espaços disponíveis");
         for(Espaco espaco: this.espacos)
         {
             if(espaco.disponibilidade)
             {
-                System.out.println(espaco.nome);
-                System.out.println(espaco.capacidade);
+                System.out.println("---------------------------");
+                System.out.println(espaco.toString());
+                System.out.println("Nome: "+espaco.nome);
+                System.out.println("Capacidade: "+espaco.capacidade);
                 System.out.println("---------------------------");
             }
 
@@ -88,6 +102,7 @@ public class Espaco {
                 break;
             }
         }
+        System.out.println("Esse espaço nem existe");
     }
     public void cancelarReserva(Espaco space)
     {
