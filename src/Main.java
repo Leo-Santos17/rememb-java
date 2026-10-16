@@ -1,19 +1,27 @@
 public class Main {
     public static void main(String[] args){
-        // Interface = A blueprint for a class that specifies a set of abstract methods
-        //             that implementing classes MUST define.
-        //             Supports multiple inheritance-like behavior.
+        // Polymorphism = "POLY" = "MANY"
+        //                "POLY" = "SHAPE"
+        //                Objects can identify as others objects
+        //                Objects can be treated as objects of a common superclass.
 
-        Rabbit rabbit = new Rabbit();
-        Hawk hawk = new Hawk();
-        Fish fish = new Fish();
+        Car car = new Car();
+        Bike bike = new Bike();
+        Boat boat = new Boat();
 
-        rabbit.flee();
+//        car.go();
+//        bike.go();
+//        boat.go();
 
-        hawk.hunt();
+        // Car[] cars = {car, bike, boat}; // incompatype type
+        // Bike[] bikes = {car, bike, boat}; // incompatype type
+        // Boat[] boats = {car, bike, boat}; // incompatype type
+        Vehicle[] vehicles = {car, bike, boat};
 
-        fish.flee();
-        fish.hunt();
+        for (Vehicle vehicle : vehicles)
+        {
+            vehicle.go();
+        }
 
     }
 }
