@@ -8,11 +8,10 @@ public class Auditorio extends Espaco{
     }
 
     @Override
-    public void mostrarEspaco() {
-        System.out.println("Nome: "+getNome()+"\n"+
-                "Disponível: "+getDisponibilidade()+"\n"+
-                "Capacidade: "+getCapacidade()+"\n"+
-                "Tipo: "+this.toString()+"\n"+
+    public void mostrarEspaco()
+    {
+        System.out.println("Auditorio");
+        System.out.println(super.texto()+
                 "Assentos: "+this.assentos);
     }
 
