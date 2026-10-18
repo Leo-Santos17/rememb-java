@@ -1,48 +1,62 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
 
-        // Wrapper classes = Allow primitive values (int, char, double, boolean)
-        //                   to be used as objects. "Wrap them in an object"
-        //                   Generally, don't wrap primitives unless you need an object.
-        //                   Allows use of Collections Framework and static Utility Methods
+        // Array list = A resizeable array that stores objects (autoboxing).
+        //              Arrays are fixed in size, but ArrayLists can change.
 
-//        // Autoboxing
-//        Integer a = 123;
-//        Double b = 3.14;
-//        Character c = '$';
-//        Boolean d = true;
-//
-//        // Unboxing
-//        int x = a;
-//        char v = c;
-//        boolean z = d;
-//        double i = b;
+//        ArrayList<Integer> list = new ArrayList<>();
+//        list.add(3);
+//        list.add(1);
+//        list.add(2);
 
-//        String a = Integer.toString(123);
-//        String b = Double.toString(3.14);
-//        String c = Character.toString('@');
-//        String d = Boolean.toString(false);
+//        ArrayList<String> fruits = new ArrayList<>();
 //
-//        String x = a+b+c+d;
-//
-//        System.out.println(x);
+//        fruits.add("Apple");
+//        fruits.add("Orange");
+//        fruits.add("Banana");
+//        fruits.add("Coconut");
+//        System.out.println(fruits);
 
-//        int a = Integer.parseInt("123");
-//        double b = Double.parseDouble("3.14");
-//        char c = "Pizza".charAt(0);
-//        boolean d = Boolean.parseBoolean("true");
-//
-//        String x = a+b+c+d; // Error: bad operand types
-//
-//        System.out.println(x);
+//        fruits.remove(1);
+//        System.out.println(fruits);
 
-//        char letter = 'b';
-//        System.out.println(Character.isLetter(letter));
-//        letter = '$';
-//        System.out.println(Character.isLetter(letter));
-//        letter = 'B';
-//        System.out.println(Character.isUpperCase(letter));
+//        fruits.set(0, "Pineapple");
+//        System.out.println(fruits);
+
+//        System.out.println(fruits.get(2));
+//        System.out.println(fruits.size());
+
+//        Collections.sort(fruits);
+//        System.out.println(fruits);
+
+//        for (String fruit: fruits)
+//        {
+//            System.out.println(fruit);
+//        }
+
+        Scanner scanner = new Scanner(System.in);
+
+        ArrayList<String> foods = new ArrayList<>();
+
+        System.out.print("Enter the # of food you would like: ");
+        int numOfFood = scanner.nextInt();
+        scanner.nextLine();
+
+        for(int i = 1; i <= numOfFood; i++)
+        {
+            System.out.print("Enter food #"+i+": ");
+            String food = scanner.nextLine();
+            foods.add(food);
+        }
+
+        System.out.println(foods);
+
+        scanner.close();
+
     }
 }
