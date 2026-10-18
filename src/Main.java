@@ -1,62 +1,36 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
 
-        // Array list = A resizeable array that stores objects (autoboxing).
-        //              Arrays are fixed in size, but ArrayLists can change.
+        // Exception = An event that interrupts the normal flow of a program
+        //             (Dividing by zero, file not found; mismatch input type)
+        //             Surround any dangerous code with a try{} block
+        //             try{}, catch{}, finally{}
 
-//        ArrayList<Integer> list = new ArrayList<>();
-//        list.add(3);
-//        list.add(1);
-//        list.add(2);
-
-//        ArrayList<String> fruits = new ArrayList<>();
-//
-//        fruits.add("Apple");
-//        fruits.add("Orange");
-//        fruits.add("Banana");
-//        fruits.add("Coconut");
-//        System.out.println(fruits);
-
-//        fruits.remove(1);
-//        System.out.println(fruits);
-
-//        fruits.set(0, "Pineapple");
-//        System.out.println(fruits);
-
-//        System.out.println(fruits.get(2));
-//        System.out.println(fruits.size());
-
-//        Collections.sort(fruits);
-//        System.out.println(fruits);
-
-//        for (String fruit: fruits)
-//        {
-//            System.out.println(fruit);
-//        }
-
-        Scanner scanner = new Scanner(System.in);
-
-        ArrayList<String> foods = new ArrayList<>();
-
-        System.out.print("Enter the # of food you would like: ");
-        int numOfFood = scanner.nextInt();
-        scanner.nextLine();
-
-        for(int i = 1; i <= numOfFood; i++)
+        try (Scanner scanner = new Scanner(System.in))
         {
-            System.out.print("Enter food #"+i+": ");
-            String food = scanner.nextLine();
-            foods.add(food);
+            System.out.print("Enter a number: ");
+            int number = scanner.nextInt();
+            System.out.println(number);
         }
-
-        System.out.println(foods);
-
-        scanner.close();
-
+        catch (InputMismatchException e)
+        {
+            System.out.println("That wasn't a number!");
+        }
+        catch (ArithmeticException e) // If equals value not calculated
+        {
+            System.out.println("YOU CAN'T DIVIDE BY ZERO!");
+        }
+        catch (Exception e)
+        {
+            // SAFETY NET
+            System.out.println("Something went wrong");
+        }
+        finally
+        {
+            System.out.println("This always executes");
+        }
     }
 }
