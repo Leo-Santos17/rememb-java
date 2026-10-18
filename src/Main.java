@@ -1,36 +1,38 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args){
 
-        // Exception = An event that interrupts the normal flow of a program
-        //             (Dividing by zero, file not found; mismatch input type)
-        //             Surround any dangerous code with a try{} block
-        //             try{}, catch{}, finally{}
+        // How to write a file using Java (4 popular options)
 
-        try (Scanner scanner = new Scanner(System.in))
+        // FileWriter = Good for small or medium-sized text files
+        // BufferedWriter = Better performance for large amounts of text
+        // PrintWriter = Best for structured data, like reports or logs
+        // FileOutputStream = Best for binary files (e.g., images, audio files)
+
+        String filePath = "C:\\Users\\Admin\\Desktop\\test.txt";
+        String textContent = """
+                Roses are Red
+                Violets are Blue
+                BOOTY BOOTY BOOTY
+                ROCKIN' EVERWHERE! 
+                """;
+
+        try (FileWriter writer = new FileWriter(filePath))
         {
-            System.out.print("Enter a number: ");
-            int number = scanner.nextInt();
-            System.out.println(number);
+            writer.write(textContent); // Generated file txt
+            System.out.println("File has been written");
         }
-        catch (InputMismatchException e)
+        catch (FileNotFoundException e)
         {
-            System.out.println("That wasn't a number!");
+            System.out.println("Could not locate file location");
         }
-        catch (ArithmeticException e) // If equals value not calculated
+        catch (IOException e)
         {
-            System.out.println("YOU CAN'T DIVIDE BY ZERO!");
+            System.out.println("Could not write file");
         }
-        catch (Exception e)
-        {
-            // SAFETY NET
-            System.out.println("Something went wrong");
-        }
-        finally
-        {
-            System.out.println("This always executes");
-        }
+
     }
 }
